@@ -15,14 +15,14 @@ def send_mail(text='choco'):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587 
     sender_email = smtp_username
-    subject = 'Gift Choose'
+    subject = 'Gift Choosen by Susmita'
 
     msgRoot = MIMEMultipart('related')
     msgRoot['From'] = sender_email
     msgRoot['To'] = receiver_email
     msgRoot['Subject'] = subject
 
-    text = """{} chosen by the person""".format(text)
+    text = """Finally {} chosen by the Susmita""".format(text)
 
     message=MIMEText(text,"plain")
 
