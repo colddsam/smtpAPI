@@ -10,19 +10,19 @@ smtp_username = os.environ['EMAIL_ID']
 smtp_password = os.environ['PASSWORD']
 receiver_email = os.environ['DEFAULT_USER']
 
-def send_mail(text='choco'):
+def send_mail(text:str,sender:str):
 
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587 
     sender_email = smtp_username
-    subject = 'Gift Choosen by Susmita'
+    subject = 'You got a message from {}'.format(sender)
 
     msgRoot = MIMEMultipart('related')
     msgRoot['From'] = sender_email
     msgRoot['To'] = receiver_email
     msgRoot['Subject'] = subject
 
-    text = """Finally {} chosen by the Susmita""".format(text)
+    text = """you got a message from {}\n{}""".format(sender,text)
 
     message=MIMEText(text,"plain")
 
