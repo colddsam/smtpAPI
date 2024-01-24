@@ -15,14 +15,14 @@ def send_mail(text:str,sender:str):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587 
     sender_email = smtp_username
-    subject = 'You got a message from {}'.format(sender)
+    subject = 'You got a alert from {}'.format(sender)
 
     msgRoot = MIMEMultipart('related')
     msgRoot['From'] = sender_email
     msgRoot['To'] = receiver_email
     msgRoot['Subject'] = subject
 
-    text = """you got a message from {}\n{}""".format(sender,text)
+    text = """your container of {} is full by {}%""".format(sender,text)
 
     message=MIMEText(text,"plain")
 
